@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Change</string>
+
+    <string name="title_enter_number" formatted="false"><![CDATA[请输入<font color="#ff0000">%s</font>的数量：]]></string>
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
+    <string name="yijiao">1角</string>
+    <string name="wujiao">5角</string>
+    <string name="yiyuan">1元</string>
+    <string name="yiyuanzhibi">1元纸币</string>
+    <string name="wuyuan">5元</string>
+    <string name="shiyuan">10元</string>
+    <string name="ershiyuan">20元</string>
+    <string name="wushiyuan">50元</string>
+
+
+</resources>

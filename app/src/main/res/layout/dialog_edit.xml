@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lizheblogs.android.change.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/titleImageIV"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/titleTextIV"
+            style="@style/FontStyleBiggerBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/numberIV"
+            style="@style/FontStyleBiggerBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/deleteTextIV"
+            android:background="@null"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp" />
+
+        <TextView
+            android:id="@+id/deleteTextIV"
+            style="@style/FontStyleBiggerBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:text="@string/delete"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/numberIV"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@+id/deleteTextIV"
+            android:background="@android:color/black" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/number1IV"
+                style="@style/Number"
+                android:text="@string/one" />
+
+            <TextView
+                android:id="@+id/number2IV"
+                style="@style/Number"
+                android:text="@string/two" />
+
+            <TextView
+                android:id="@+id/number3IV"
+                style="@style/Number"
+                android:text="@string/three" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/number4IV"
+                style="@style/Number"
+                android:text="@string/four" />
+
+            <TextView
+                android:id="@+id/number5IV"
+                style="@style/Number"
+                android:text="@string/five" />
+
+            <TextView
+                android:id="@+id/number6IV"
+                style="@style/Number"
+                android:text="@string/six" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/number7IV"
+                style="@style/Number"
+                android:text="@string/seven" />
+
+            <TextView
+                android:id="@+id/number8IV"
+                style="@style/Number"
+                android:text="@string/eight" />
+
+            <TextView
+                android:id="@+id/number9IV"
+                style="@style/Number"
+                android:text="@string/nine" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/cancelIV"
+                style="@style/Number"
+                android:text="@string/cancel" />
+
+            <TextView
+                android:id="@+id/number0IV"
+                style="@style/Number"
+                android:text="@string/zero" />
+
+            <TextView
+                android:id="@+id/okIV"
+                style="@style/Number"
+                android:text="@string/ok" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

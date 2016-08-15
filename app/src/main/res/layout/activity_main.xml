@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lizheblogs.android.change.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <ImageView
+            android:id="@+id/yijiaoIV"
+            style="@style/CoinRMBImage"
+            android:src="@mipmap/yijiao" />
+
+        <ImageView
+            android:id="@+id/wujiaoIV"
+            style="@style/CoinRMBImage"
+            android:src="@mipmap/wujiao" />
+
+        <ImageView
+            android:id="@+id/yiyuanIV"
+            style="@style/CoinRMBImage"
+            android:src="@mipmap/yiyuan" />
+
+        <ImageView
+            android:id="@+id/yiyuanzhiIV"
+            style="@style/RMBImage"
+            android:src="@mipmap/yiyuan_zhi" />
+
+        <ImageView
+            android:id="@+id/wuyuanIV"
+            style="@style/RMBImage"
+            android:src="@mipmap/wuyuan" />
+
+        <ImageView
+            android:id="@+id/shiyuanIV"
+            style="@style/RMBImage"
+            android:src="@mipmap/shiyuan" />
+
+        <ImageView
+            android:id="@+id/ershiyuanIV"
+            style="@style/RMBImage"
+            android:src="@mipmap/ershiyuan" />
+
+        <ImageView
+            android:id="@+id/wushiyuanIV"
+            style="@style/RMBImage"
+            android:src="@mipmap/wushiyuan" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <TextView
+            android:id="@+id/yijiaoTV"
+            style="@style/RMBText"/>
+
+        <TextView
+            android:id="@+id/wujiaoTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/yiyuanTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/yiyuanzhiTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/wuyuanTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/shiyuanTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/ershiyuanTV"
+            style="@style/RMBText" />
+
+        <TextView
+            android:id="@+id/wushiyuanTV"
+            style="@style/RMBText" />
+    </LinearLayout>
+</LinearLayout>
