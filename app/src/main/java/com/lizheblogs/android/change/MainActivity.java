@@ -2,7 +2,6 @@ package com.lizheblogs.android.change;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -57,46 +56,48 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.wushiyuanIV:
             case R.id.wushiyuanTV:
-                CustomDialog mDialog = new CustomDialog(this, new CustomDialog.NumberCallBack() {
-
-                    @Override
-                    public void updateNumber(int num) {
-
-                    }
-                });
-                mDialog.show(DataDao.RMB.YI_JIAO, 100);
-
-
+                showChangeDialog(wushiyuanTV, DataDao.RMB.WU_SHI_YUAN);
                 break;
             case R.id.ershiyuanIV:
             case R.id.ershiyuanTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(ershiyuanTV, DataDao.RMB.ER_SHI_YUAN);
                 break;
             case R.id.shiyuanIV:
             case R.id.shiyuanTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(shiyuanTV, DataDao.RMB.SHI_YUAN);
                 break;
             case R.id.wuyuanIV:
             case R.id.wuyuanTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(wuyuanTV, DataDao.RMB.WU_YUAN);
                 break;
             case R.id.yiyuanzhiIV:
             case R.id.yiyuanzhiTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(yiyuanzhiTV, DataDao.RMB.YI_YUAN_ZHI);
                 break;
             case R.id.yiyuanIV:
             case R.id.yiyuanTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(yiyuanTV, DataDao.RMB.YI_YUAN);
                 break;
             case R.id.wujiaoIV:
             case R.id.wujiaoTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(wujiaoTV, DataDao.RMB.WU_JIAO);
                 break;
             case R.id.yijiaoIV:
             case R.id.yijiaoTV:
-                Log.e("wushiyuanIV", "wushiyuanIV");
+                showChangeDialog(yijiaoTV, DataDao.RMB.YI_JIAO);
                 break;
 
         }
+    }
+
+    private void showChangeDialog(final TextView textView, DataDao.RMB tag) {
+        CustomDialog mDialog = new CustomDialog(this, new CustomDialog.NumberCallBack() {
+
+            @Override
+            public void updateNumber(int num) {
+                textView.setText(String.valueOf(num));
+            }
+        });
+        mDialog.show(tag, textView.getText().toString());
     }
 }

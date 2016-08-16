@@ -3,6 +3,7 @@ package com.lizheblogs.android.change;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,18 +15,22 @@ import java.util.Locale;
  * CustomDialog
  * Created by Norman.Li on 8/8/2016.
  */
-public class CustomDialog implements View.OnClickListener {
+public class CustomDialog extends AlertDialog implements View.OnClickListener {
 
     private Context mContext;
     private NumberCallBack numberCallBack;
+    private StringBuffer numBuffer;
+    private TextView numberIV;
 
 
     public CustomDialog(Context mContext, NumberCallBack numberCallBack) {
+        super(mContext);
         this.mContext = mContext;
         this.numberCallBack = numberCallBack;
     }
 
-    public void show(DataDao.RMB rmb, int num) {
+    public void show(DataDao.RMB rmb, String num) {
+        this.numBuffer = new StringBuffer(num);
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View convertView = inflater.inflate(R.layout.dialog_edit, null);
 
@@ -55,18 +60,88 @@ public class CustomDialog implements View.OnClickListener {
         number1IV.setOnClickListener(this);
         TextView deleteTextIV = (TextView) convertView.findViewById(R.id.deleteTextIV);
         deleteTextIV.setOnClickListener(this);
-        TextView numberIV = (TextView) convertView.findViewById(R.id.numberIV);
-        numberIV.setText(String.valueOf(num));
+        numberIV = (TextView) convertView.findViewById(R.id.numberIV);
+        numberIV.setText(num);
         setTitle(rmb, convertView);
 
-        AlertDialog dialog = new AlertDialog.Builder(mContext).create();
-        dialog.setView(convertView);
-        dialog.show();
+        setView(convertView);
+        show();
     }
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.okIV:
+                numberCallBack.updateNumber(getNumInteger());
+            case R.id.cancelIV:
+                dismiss();
+                break;
+            case R.id.number0IV:
+                enter("0");
+                break;
+            case R.id.number1IV:
+                enter("1");
+                break;
+            case R.id.number2IV:
+                enter("2");
+                break;
+            case R.id.number3IV:
+                enter("3");
+                break;
+            case R.id.number4IV:
+                enter("4");
+                break;
+            case R.id.number5IV:
+                enter("5");
+                break;
+            case R.id.number6IV:
+                enter("6");
+                break;
+            case R.id.number7IV:
+                enter("7");
+                break;
+            case R.id.number8IV:
+                enter("8");
+                break;
+            case R.id.number9IV:
+                enter("9");
+                break;
+            case R.id.deleteTextIV:
+                int size = numBuffer.length();
+                if (size > 0) {
+                    numBuffer.deleteCharAt(size - 1);
+                    numberIV.setText(getNumString());
+                }
+                break;
 
+
+        }
+    }
+
+    private void enter(String number) {
+        numBuffer.append(number);
+        numberIV.setText(getNumString());
+    }
+
+    private String getNumString() {
+        return String.valueOf(getNumInteger());
+    }
+
+    private int getNumInteger() {
+        int num = 0;
+        String string = numBuffer.toString();
+        if (!TextUtils.isEmpty(string)) {
+            if (string.length() < 10) {
+                try {
+                    num = Integer.valueOf(string);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        numBuffer.setLength(0);
+        numBuffer.append(num);
+        return num;
     }
 
     private void setTitle(DataDao.RMB rmb, View convertView) {

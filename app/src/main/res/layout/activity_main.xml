@@ -18,17 +18,17 @@
 
         <ImageView
             android:id="@+id/yijiaoIV"
-            style="@style/CoinRMBImage"
+            style="@style/RMBImage"
             android:src="@mipmap/yijiao" />
 
         <ImageView
             android:id="@+id/wujiaoIV"
-            style="@style/CoinRMBImage"
+            style="@style/RMBImage"
             android:src="@mipmap/wujiao" />
 
         <ImageView
             android:id="@+id/yiyuanIV"
-            style="@style/CoinRMBImage"
+            style="@style/RMBImage"
             android:src="@mipmap/yiyuan" />
 
         <ImageView
