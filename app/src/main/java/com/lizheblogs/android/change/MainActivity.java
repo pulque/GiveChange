@@ -90,12 +90,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showChangeDialog(final TextView textView, DataDao.RMB tag) {
+    private void showChangeDialog(final TextView textView, final DataDao.RMB tag) {
         CustomDialog mDialog = new CustomDialog(this, new CustomDialog.NumberCallBack() {
 
             @Override
             public void updateNumber(int num) {
                 textView.setText(String.valueOf(num));
+                money.put(tag, num);
             }
         });
         mDialog.show(tag, textView.getText().toString());
